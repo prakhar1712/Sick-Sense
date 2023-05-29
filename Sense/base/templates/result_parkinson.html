@@ -1,0 +1,177 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{%url 'about'%}">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="disease-title">RESULT OF PARKINSONS TEST IS </h3>
+    {% block content%}
+    <h1 style="text-align: center;">{{result}}</h1>
+
+    {% endblock content%}
+    <h3>Prevention</h3>
+    <p>Because the cause of Parkinson's is unknown, there are no proven ways to prevent the disease.
+
+        Some research has shown that regular aerobic exercise might reduce the risk of Parkinson's disease.
+
+        Some other research has shown that people who consume caffeine — which is found in coffee, tea and cola — get
+        Parkinson's disease less often than those who don't drink it. Green tea is also related to a reduced risk of
+        developing
+        Parkinson's disease. However, it is still not known whether caffeine protects against getting Parkinson's or is
+        related
+        in some other way. Currently there is not enough evidence to suggest that drinking caffeinated beverages
+        protects
+        against Parkinson's.</p>
+    <h3>Treatment</h3>
+
+    <p>Parkinson's disease can't be cured, but medications can help control the symptoms, often dramatically. In some
+        more
+        advanced cases, surgery may be advised.
+
+        Your health care provider may also recommend lifestyle changes, especially ongoing aerobic exercise. In some
+        cases,
+        physical therapy that focuses on balance and stretching is important. A speech-language pathologist may help
+        improve
+        speech problems.
+    </p>
+
+    <h3>Medications</h3>
+    <p>Medications may help you manage problems with walking, movement and tremor. These medications increase or
+        substitute for
+        dopamine.
+
+        People with Parkinson's disease have low brain dopamine concentrations. However, dopamine can't be given
+        directly as it
+        can't enter the brain.
+
+        You may have significant improvement of your symptoms after beginning Parkinson's disease treatment. Over time,
+        however,
+        the benefits of drugs frequently diminish or become less consistent. You can usually still control your symptoms
+        well.</p>
+    <footer class="footer section gray-bg">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 ml-3 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ad.</p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <div class="divider mb-4"></div>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Company Support </a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Company Licence</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                        </div>
+
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        //javascript for quick view button
+        var popup = function (popupClick) {
+            popupViews[popupClick].classList.add('active');
+        }
+
+        popupBtns.forEach((popupBtn, i) => {
+            popupBtn.addEventListener("click", () => {
+                popup(i);
+            });
+        });
+
+        //javascript for close button
+        closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener("click", () => {
+                popupViews.forEach((popupView) => {
+                    popupView.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

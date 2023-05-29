@@ -1,0 +1,314 @@
+{%load static%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="disease-title">Diabetes</h3>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="formbold-mb-5">
+                    <label for="ploy" class="formbold-form-label">
+                        Polydipsia
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input class="formbold-form-input" type="number" id="ploy" name="poly"
+                        placeholder="Enter Polydipsia" required />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="weight" class="formbold-form-label">
+                        Sudden weight Loss
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" id="weight" name="weight" placeholder="Enter Sudden weight Loss" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="pp" class="formbold-form-label">
+                        Partial Paresis
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input class="formbold-form-input" type="number" id="pp" name="pp"
+                        placeholder="Enter Partial Paresis" required />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="weight" class="formbold-form-label">
+                        Irritability
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="iri" name="iri" placeholder="Enter Polyphagia"
+                        required class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="ph" class="formbold-form-label">
+                        Polyphagia
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" id="ph" name="ph" placeholder="Enter Age" required required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="weight" class="formbold-form-label">
+                        Age
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" id="Age" name="Age" placeholder="Enter Age" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="weight" class="formbold-form-label">
+                        Visual blurring
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" id="vb" name="vb" placeholder="Enter Visual blurring" required
+                        class="formbold-form-input" />
+                </div>
+                <div>
+                    <button class="formbold-btn">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+
+    </style>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Polydipsia<br></h3>
+                    <p>Polydipsia is a medical condition characterized by excessive thirst and increased fluid intake.
+                        In the context of
+                        diabetes, it may indicate high blood glucose levels. The normal range for thirst varies, but if
+                        you notice an
+                        increase in your usual thirst levels, it may be worth discussing with your healthcare provider.
+                        An abnormal range
+                        for thirst can be subjective and varies depending on the individual. However, if you are
+                        consuming more than 3-4
+                        liters of fluids per day or experiencing constant thirst, you should speak to your doctor.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Sudden weight Loss</h3>
+                <p>Sudden weight loss can be a symptom of diabetes, as the body may begin to break down fat and muscle
+                    tissue for energy if it is not able to properly use glucose. The normal range for weight loss varies
+                    depending on individual factors such as diet and exercise, but a sudden and significant loss of
+                    weight
+                    (such as 5% or more of body weight within a few months) could be cause for concern. A sustained
+                    weight
+                    loss of greater than 10% of the initial body weight warrants medical attention.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Partial Paresis<br></h3>
+                <p>Partial paresis, or weakness or paralysis of a part of the body, may be a sign of nerve damage caused
+                    by
+                    high blood glucose levels in people with diabetes. The normal range for muscle strength varies
+                    depending
+                    on the muscle group and individual, but weakness or paralysis that persists over time should be
+                    evaluated by a healthcare provider. Paresis is considered abnormal when it is persistent or
+                    progressive.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Irritability<br></h3>
+                <p>Irritability is a common symptom of diabetes, as high blood glucose levels can affect mood and energy
+                    levels. The normal range for irritability varies depending on individual factors such as stress and
+                    sleep, but if you notice significant changes in your mood or energy levels, it may be worth
+                    discussing
+                    with your healthcare provider. Irritability is considered abnormal if it is persistent or
+                    significantly
+                    interferes with daily activities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Polyphagia<br></h3>
+                <p>Polyphagia is a medical condition characterized by excessive hunger and increased food intake. In the
+                    context of diabetes prediction, it may indicate high blood glucose levels. The normal range for
+                    hunger
+                    varies, but if you notice an increase in your usual hunger levels, it may be worth discussing with
+                    your
+                    healthcare provider. Polyphagia is considered abnormal when it is persistent or significantly
+                    interferes
+                    with daily activities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>AGE<br></h3>
+                <p>Enter The Age
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Visual blurring<br></h3>
+                <p>Visual blurring, or blurred vision, may be a sign of high blood glucose levels affecting the lens of
+                    the
+                    eye. The normal range for visual acuity varies depending on individual factors such as age and eye
+                    health, but any changes in vision should be evaluated by an eye doctor or healthcare provider.
+                    Visual
+                    blurring is considered abnormal if it is persistent or significantly interferes with daily
+                    activities.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer section gray-bg">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 ml-3 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ad.</p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <div class="divider mb-4"></div>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Company Support </a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Company Licence</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                        </div>
+
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        //javascript for quick view button
+        var popup = function (popupClick) {
+            popupViews[popupClick].classList.add('active');
+        }
+
+        popupBtns.forEach((popupBtn, i) => {
+            popupBtn.addEventListener("click", () => {
+                popup(i);
+            });
+        });
+
+        //javascript for close button
+        closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener("click", () => {
+                popupViews.forEach((popupView) => {
+                    popupView.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="heading">
+            Sick-Sense
+        </div>
+        <div class="main">
+            <input type="checkbox" id="chk" aria-hidden="true">
+
+            <div class="login">
+                <form class="form">
+                    <label for="chk" aria-hidden="true" class="header">Log in</label>
+                    <div class="user-box">
+                        <input required name="email" type="email" id="email">
+                        <label class="formlabel">Email ID</label>
+                    </div>
+                    <div class="user-box">
+                        <input required name="password" type="password" id="password">
+                        <label class="formlabel">Password</label>
+                    </div>
+                    <button style="margin-bottom: 25px;">Log in</button>
+                </form>
+            </div>
+
+            <div class="register">
+                <form class="form">
+                    <label for="chk" aria-hidden="true" class="header"
+                        style="margin-top: -2px;font-size: 20px;">Register</label>
+                    <div class="user-box">
+                        <input required name="name" type="text" id="name">
+                        <label class="formlabel">Name</label>
+                    </div>
+                    <div class="user-box">
+                        <input required name="email" type="email" id="email">
+                        <label class="formlabel">Email ID</label>
+                    </div>
+                    <div class="user-box">
+                        <input required name="password" type="password" id="password">
+                        <label class="formlabel">Password</label>
+                    </div>
+                    <button>Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

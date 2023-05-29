@@ -1,0 +1,285 @@
+{%load static%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypertension</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{%url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home'%}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="disease-title">Hypertension</h3>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="formbold-mb-5">
+                    <label for="gender" class="formbold-form-label">
+                        Gender
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="gender" id="gender" placeholder="enter gender" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Age" class="formbold-form-label">
+                        Age
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="Age" id="Age" placeholder="Enter Age" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="hd" class="formbold-form-label">
+                        Heart Disease
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="hd" id="hd" placeholder="Enter 1 or 0" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="avg" class="formbold-form-label">
+                        Glucose_level
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="avg" id="avg" required placeholder="Enter Glucose level"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="bmi" class="formbold-form-label">
+                        BMI
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="bmi" id="bmi" required placeholder="Enter BMI"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="hs" class="formbold-form-label">
+                        Heart Stroke
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="hs" id="hs" required placeholder="Enter 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div>
+                    <button class="formbold-btn">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+
+    </style>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Parameter 1<br><span>Parameter 1</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Parameter 1<br><span>Parameter 1</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Heart Disease</h3>
+                    <p>Heart disease refers to a range of conditions that can affect the heart, such as coronary artery
+                        disease, heart rhythm disorders, and heart defects. The presence of heart disease is a
+                        significant
+                        risk factor for hypertension. There is no specific numerical range for heart disease, but it can
+                        be
+                        diagnosed through medical tests and examinations.<br>If you have any heart disease, please enter
+                        1
+                        or else enter 0.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Glucose Level</h3>
+                    <p>Glucose is a type of sugar that the body uses for energy. High glucose levels can indicate the
+                        presence of diabetes, which is a major risk factor for hypertension. The normal range for
+                        fasting
+                        glucose levels is between 70-100 mg/dL, and levels above 126 mg/dL are considered diabetic.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>BMI</h3>
+                    <p>BMI, or body mass index, is a measure of body fat based on height and weight. A high BMI is a
+                        significant risk factor for hypertension. A healthy BMI range is between 18.5-24.9 kg/m², while
+                        a
+                        BMI of 25-29.9 kg/m² is considered overweight, and a BMI of 30 kg/m² or higher is considered
+                        obese.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Heart Stroke</h3>
+                    <p>A stroke occurs when blood flow to the brain is interrupted, either by a blockage or a burst
+                        blood
+                        vessel. Hypertension is a significant risk factor for stroke. There is no specific numerical
+                        range
+                        for stroke, but it can be diagnosed through medical tests and examinations.<br>If you have had a
+                        stroke in the past, enter 1 or else enter 0.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer section gray-bg">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 ml-3 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ad.</p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <div class="divider mb-4"></div>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Company Support </a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Company Licence</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                        </div>
+
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        //javascript for quick view button
+        var popup = function (popupClick) {
+            popupViews[popupClick].classList.add('active');
+        }
+
+        popupBtns.forEach((popupBtn, i) => {
+            popupBtn.addEventListener("click", () => {
+                popup(i);
+            });
+        });
+
+        //javascript for close button
+        closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener("click", () => {
+                popupViews.forEach((popupView) => {
+                    popupView.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

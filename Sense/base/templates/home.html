@@ -1,0 +1,209 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SickSense</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{%url 'about'%}">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{%url 'contact' %}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-xl-7">
+                    <div class="block">
+                        <div class="divider mb-3"></div>
+                        <span class="text-uppercase text-sm letter-spacing ">Total Health care solution</span>
+                        <h1 class="mb-3 mt-3">Your most trusted health partner</h1>
+
+                        <p class="mb-4 pr-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non, praesentium?
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-lg-12">
+                    <div class="feature-block">
+                        <div class="feature-item mb-5 mb-lg-0" id="diseases">
+                            <h2 class="mb-3 text-center">Lung Cancer</h2>
+                            <a href="{% url 'lungCancer' %}" class="btn btn-main btn-round-full col-lg-12">Click here to
+                                predict</a>
+                        </div>
+
+                        <div class="feature-item mb-5 mb-lg-0" id="diseases">
+                            <h2 class="mb-3 text-center">Diabetes</h2>
+                            <a href="{% url 'diabetes' %}" class="btn btn-main btn-round-full col-lg-12">Click here to
+                                predict</a>
+                        </div>
+
+                        <div class="feature-item mb-5 mb-lg-0" id="diseases">
+                            <h2 class="mb-3 text-center">Heart Attack</h2>
+                            <a href="{% url 'heartAttack' %}" class="btn btn-main btn-round-full col-lg-12">Click here
+                                to
+                                predict</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="feature-block d-lg-flex">
+                        <div class="feature-item mb-5 mb-lg-0" id="diseases">
+                            <h2 class="mb-3 text-center">Kidney Disease</h2>
+                            <a href="{% url 'kidneyDisease' %}" class="btn btn-main btn-round-full col-lg-12">Click here
+                                to
+                                predict</a>
+                        </div>
+
+                        <div class="feature-item mb-5 mb-lg-0" id="diseases">
+                            <h2 class="mb-3 text-center">Hypertension</h2>
+                            <a href="{% url 'hypertension' %}" class="btn btn-main btn-round-full col-lg-12">Click here
+                                to
+                                predict</a>
+                        </div>
+
+                        <div class="feature-item mb-5 mb-lg-0" id="diseases">
+                            <h2 class="mb-3 text-center">Parkinsons</h2>
+                            <a href="{% url 'parkinson' %}" class="btn btn-main btn-round-full col-lg-12">Click
+                                here to
+                                predict</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="about-img">
+                        <img src="{% static 'images/about/img-1.jpg' %}" alt="" class="img-fluid">
+                        <img src="{% static 'images/about/img-2.jpg' %}" alt="" class="img-fluid mt-4">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="about-img mt-4 mt-lg-0">
+                        <img src="{% static 'images/about/img-3.jpg' %}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-content pl-4 mt-4 mt-lg-0">
+                        <h3 class="title-color">Personal care <br>& healthy living</h3>
+                        <p class="mt-4 mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet fugit
+                            minus soluta, dolor similique harum voluptatibus ipsam repellat iusto totam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer section gray-bg">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 ml-3 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="{%static 'images/logo.png' %}" alt="" class="img-fluid">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ad.</p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <div class="divider mb-4"></div>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Company Support </a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Company Licence</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                        </div>
+
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SickSense</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{%url 'about'%}">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{%url 'contact' %}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="disease-title">Kidney Disease</h3>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="formbold-mb-5">
+                    <label for="Age" class="formbold-form-label">
+                        Age
+                    </label>
+                    <input type="number" name="Age" id="Age" placeholder="Enter age" class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Blood" class="formbold-form-label">
+                        Blood Pressure
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="Blood" id="Blood" placeholder="Enter Blood Pressure"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="RBC" class="formbold-form-label">
+                        RBC
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="RBC" id="RBC" placeholder="Enter RBC" class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Hypertension" class="formbold-form-label">
+                        Hypertension
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="Hypertension" id="Hypertension" placeholder="Enter Hypertension"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Diabetic" class="formbold-form-label">
+                        Diabetic
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="Diabetic" id="Diabetic" placeholder="Enter 1 for yes or 0 for no"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="CAD" class="formbold-form-label">
+                        CAD
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="CAD" id="CAD" placeholder="Enter 1 for yes or 0 for no"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Appetite" class="formbold-form-label">
+                        Appetite
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="Appetite" id="Appetite" placeholder="Enter 1 for yes or 0 for no"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Protein" class="formbold-form-label">
+                        Protein Evaluation
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="Protein" id="Protein" placeholder="Enter 1 for yes or 0 for no"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="ANE" class="formbold-form-label">
+                        Anemia
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" name="ANE" id="ANE" placeholder="Enter 1 for yes or 0 for no"
+                        class="formbold-form-input" />
+                </div>
+                <button class="formbold-btn">Predict</button>
+        </div>
+        </form>
+    </div>
+    </div>
+    <style>
+
+    </style>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Blood Pressure</h3>
+                    <p>Blood pressure is a measure of the force of blood against the walls of the arteries. High blood
+                        pressure, or hypertension, is a significant risk factor for kidney disease. Normal blood
+                        pressure is considered to be less than 120/80 mm Hg, while blood pressure between 120-139/80-89
+                        mm Hg is considered pre-hypertension, and blood pressure above 140/90 mm Hg is considered
+                        hypertension.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>RBC</h3>
+                    <p>RBC, or red blood cell count, is a measure of the number of red blood cells in the blood.
+                        Abnormal RBC counts can indicate a range of kidney diseases. The normal range for RBC count in
+                        men is between 4.5-5.5 million cells/mcL, while the normal range for women is between 4.0-5.0
+                        million cells/mcL.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Hypertension</h3>
+                    <p>Hypertension, or high blood pressure, is a significant risk factor for kidney disease. Normal
+                        blood pressure is considered to be less than 120/80 mm Hg, while blood pressure above 140/90 mm
+                        Hg is considered hypertension.<br>If you have hypertension, enter 1 or else enter 0.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Diabetic</h3>
+                    <p>Diabetes is a chronic condition characterized by high levels of glucose in the blood. Diabetes is
+                        a significant risk factor for kidney disease. The normal range for fasting glucose levels is
+                        between 70-100 mg/dL, and levels above 126 mg/dL are considered diabetic.<br>Enter 1 if you are
+                        diabetic or else enter 0.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>CAD</h3>
+                    <p>CAD, or coronary artery disease, is a condition in which the arteries that supply blood to the
+                        heart become narrowed or blocked, leading to reduced blood flow and oxygen to the heart muscle.
+                        CAD is a significant risk factor for kidney disease.<br>If you have coronary arterey disease,
+                        enter 1 or else enter 0.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Appetite</h3>
+                    <p>Poor appetite or loss of appetite is a common symptom of kidney disease. It can be caused by a
+                        buildup of waste products in the blood or by changes in hormones that control appetite. An
+                        evaluation of appetite can provide useful information in predicting kidney disease.<br>Enter 1
+                        for a good appetie ar else enter 0 for a bad appetite.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Protein Evaluation</h3>
+                    <p>Proteinuria, or the presence of excess protein in the urine, is a significant indicator of kidney
+                        disease. A protein evaluation test measures the amount of protein in the urine. The normal range
+                        for proteinuria is less than 150 mg/24 hours.<br>Enter 1 if proteinuria is above 150 mg, or else
+                        enter 0.</p>
+                </div>
+            </div>
+        </div>
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Anemia</h3>
+                    <p>Anemia is a condition in which there are not enough red blood cells to carry oxygen to the body's
+                        tissues. Anemia is a common complication of kidney disease. A blood test to measure hemoglobin
+                        levels can help diagnose anemia. The normal range for hemoglobin in men is between 13.5-17.5
+                        g/dL, while the normal range for women is between 12.0-15.5 g/dL.<br>Enter 1 if you have anemia
+                        or else enter 0.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer section gray-bg">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 ml-3 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="images/logo.png" alt="" class="img-fluid">
+                        </div>
+                        <p>Our team is dedicated to providing you with the best possible service and support.
+                            Stay up-to-date with the latest health news and tips by following SickSense on social media.
+                        </p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <div class="divider mb-4"></div>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Company Support </a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Company Licence</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                        </div>
+
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        //javascript for quick view button
+        var popup = function (popupClick) {
+            popupViews[popupClick].classList.add('active');
+        }
+
+        popupBtns.forEach((popupBtn, i) => {
+            popupBtn.addEventListener("click", () => {
+                popup(i);
+            });
+        });
+
+        //javascript for close button
+        closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener("click", () => {
+                popupViews.forEach((popupView) => {
+                    popupView.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

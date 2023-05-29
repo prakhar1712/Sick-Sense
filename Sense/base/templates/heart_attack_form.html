@@ -1,0 +1,457 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about'%}">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="disease-title">Heart Attack</h3>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="formbold-mb-5">
+                    <label for="Age" class="formbold-form-label">
+                        Age
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" id="Age" name="Age" placeholder="Enter Age" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Sex" class="formbold-form-label">
+                        Sex
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" id="Sex" name="Sex" placeholder="Enter Sex" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Cp" class="formbold-form-label">
+                        Chest Pain
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" class="form-control" id="Cp" name="Cp" placeholder="Enter Chest Pain" required
+                        class="formbold-form-input" />
+                    <p>Enter 1 2 3 where 1 -> lowest and 3 -> highest </p>
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="trtbps" class="formbold-form-label">
+                        Resting Blood Pressure (in mm Hg)
+                        <a type="number" id="trtbps" placeholder="Enter Resting Blood Pressure" required
+                            class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="text" name="name" id="name" placeholder="Parameter 3" class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Chol" class="formbold-form-label">
+                        cholestoral (mg/dl)
+                        <a type="number" id="Chol" name="Chol" placeholder="Enter Cholestoral" required
+                            class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="text" name="name" id="name" placeholder="Parameter 3" class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Fbs" class="formbold-form-label">
+                        Fasting Blood Sugar
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="Fbs" name="Fbs"
+                        placeholder="Enter Fasting Blood Sugar" required class="formbold-form-input" />
+                    <p>fasting blood sugar > 120 mg/dl => 1 = true; 0 = false</p>
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Rest" class="formbold-form-label">
+                        Resting Electrocardiographic Results
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input ype="number" class="form-control" id="Rest" name="Rest"
+                        placeholder="Enter resting electrocardiographic results" required class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="thala" class="formbold-form-label">
+                        Maximum Heart Rate Achieved
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="thala" name="thala"
+                        placeholder="Enter Maximum Heart Rate Achieved" required class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Exec" class="formbold-form-label">
+                        Exercise Induced Angina
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="Exec" name="Exec"
+                        placeholder="Enter Exercise Induced Angina" required class="formbold-form-input" />
+                    <p>(1 = yes; 0 = no)</p>
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Old" class="formbold-form-label">
+                        Old Peak
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="Old" name="Old" placeholder="Enter Old peak" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Slp" class="formbold-form-label">
+                        slp
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="Slp" name="Slp" placeholder="Enter Slp" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Caa" class="formbold-form-label">
+                        Caa
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="Caa" name="Caa" placeholder="Enter Caa" required
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="Thall" class="formbold-form-label">
+                        thall
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+                    <input type="number" class="form-control" id="Thall" name="Thall" placeholder="Enter Thall" required
+                        class="formbold-form-input" />
+                </div>
+                <div>
+                    <button class="formbold-btn">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+
+    </style>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Parameter 1<br><span>Parameter 1</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Parameter 1<br><span>Parameter 1</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Chest Pain</h3>
+                    <p>Chest pain, or angina, can be a symptom of heart attack, as it can indicate a lack of oxygen to
+                        the heart. The normal
+                        range for chest pain is none. However, chest pain is considered abnormal when it is persistent
+                        or significantly
+                        interferes with daily activities.<br>Enter your pain level in 1,2 or 3, where 1 is lowest pain
+                        and 3 is highest pain
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Resting Blood Pressure</h3>
+                    <p>Resting blood pressure measures the force of blood against the walls of the arteries when the
+                        heart is at rest. The
+                        normal range for resting blood pressure is below 120/80 mm Hg. However, high blood pressure, or
+                        hypertension, is
+                        considered abnormal when the reading is consistently above 130/80 mm Hg.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Cholestoral</h3>
+                    <p>Cholesterol is a waxy, fat-like substance that can build up in the arteries and increase the risk
+                        of heart attack.
+                        The normal range for cholesterol is below 200 mg/dL. However, high levels of LDL cholesterol,
+                        also known as "bad"
+                        cholesterol, are considered abnormal when they are consistently above 120 mg/dL.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Fasting Blood Sugar</h3>
+                    <p>Fasting blood sugar measures the amount of glucose in the blood after a period of fasting. The
+                        normal range for
+                        fasting blood sugar is below 100 mg/dL. However, high levels of fasting blood sugar, also known
+                        as hyperglycemia,
+                        are considered abnormal when the reading is consistently above 126 mg/dL. if fasting blood sugar
+                        is greater than 120
+                        mg/dl, then enter 1 which is true, else 0 which is false</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Resting ECG</h3>
+                    <p>A resting electrocardiogram, or ECG, measures the electrical activity of the heart at rest. The
+                        normal range for
+                        resting ECG results is a regular heart rhythm with no signs of abnormal activity. However,
+                        abnormal ECG results,
+                        such as irregular heart rhythms or abnormal waves, are considered abnormal and may indicate an
+                        increased risk of
+                        heart attack.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Heart Rate </h3>
+                    <p>Maximum heart rate achieved measures the highest heart rate reached during exercise. The normal
+                        range for maximum
+                        heart rate achieved varies depending on age and physical fitness level, but generally ranges
+                        from 220 minus age to
+                        180 minus age. However, an abnormally high or low maximum heart rate achieved may indicate an
+                        increased risk of
+                        heart attack.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Induced Angina</h3>
+                    <p>Exercise-induced angina, or chest pain during exercise, can be a symptom of heart attack, as it
+                        can indicate a lack
+                        of oxygen to the heart. The normal range for exercise-induced angina is none. However, chest
+                        pain during exercise is
+                        considered abnormal and may indicate an increased risk of heart attack.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Old Peak</h3>
+                    <p>Old peak measures the amount of ST depression on the ECG during exercise. The normal range for
+                        old peak varies
+                        depending on individual factors such as age and physical fitness level, but an abnormally high
+                        or prolonged old peak
+                        may indicate an increased risk of heart attack.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>SLP</h3>
+                    <p>Single-photon emission computed tomography (SPECT) is a diagnostic imaging test that can be used
+                        to assess blood flow
+                        to the heart. The normal range for SPECT results is a normal blood flow pattern with no signs of
+                        abnormalities.
+                        However, abnormal SPECT results, such as reduced blood flow to the heart, are considered
+                        abnormal and may indicate
+                        an increased risk of heart attack.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>CAA</h3>
+                    <p>Coronary artery calcification (CAC) is a test that uses computed tomography (CT) scans to measure
+                        the amount of
+                        calcium buildup in the arteries of the heart. The normal range for CAC scores is zero,
+                        indicating no calcium
+                        buildup. However, higher CAC scores are considered abnormal and may indicate an increased risk
+                        of heart attack.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>THALL</h3>
+                    <p>Thallium stress testing is a diagnostic imaging test that can be used to assess blood flow to the
+                        heart during
+                        exercise. The normal range for thallium stress testing is a normal</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer section gray-bg">
+            <div class="footer-container">
+                <div class="row">
+                    <div class="col-lg-4 mr-auto col-sm-6">
+                        <div class="widget mb-5 ml-3 mb-lg-0">
+                            <div class="logo mb-4">
+                                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ad.</p>
+                            <ul class="list-inline footer-socials mt-4">
+                                <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="widget mb-5 mb-lg-0">
+                            <h4 class="text-capitalize mb-3">Support</h4>
+                            <div class="divider mb-4"></div>
+
+                            <ul class="list-unstyled footer-menu lh-35">
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Company Support </a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Company Licence</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3">
+                        <div class="widget widget-contact mb-5 mb-lg-0">
+                            <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                            <div class="divider mb-4"></div>
+
+                            <div class="footer-contact-block mb-4">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-email mr-3"></i>
+                                    <span class="h6 mb-0">Support Available for 24/7</span>
+                                </div>
+                                <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                            </div>
+
+                            <div class="footer-contact-block">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="icofont-support mr-3"></i>
+                                    <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                                </div>
+                                <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+            var popupViews = document.querySelectorAll('.popup-view');
+            var popupBtns = document.querySelectorAll('.popup-btn');
+            var closeBtns = document.querySelectorAll('.close-btn');
+
+            //javascript for quick view button
+            var popup = function (popupClick) {
+                popupViews[popupClick].classList.add('active');
+            }
+
+            popupBtns.forEach((popupBtn, i) => {
+                popupBtn.addEventListener("click", () => {
+                    popup(i);
+                });
+            });
+
+            //javascript for close button
+            closeBtns.forEach((closeBtn) => {
+                closeBtn.addEventListener("click", () => {
+                    popupViews.forEach((popupView) => {
+                        popupView.classList.remove('active');
+                    });
+                });
+            });
+        </script>
+
+</body>
+
+</html>

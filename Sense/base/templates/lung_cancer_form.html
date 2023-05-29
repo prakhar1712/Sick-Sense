@@ -1,0 +1,338 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/icofont/icofont.min.css' %}">
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer</title>
+</head>
+
+<body id="top">
+    <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+            </a>
+
+            <div class="collapse navbar-collapse" id="navbarmain">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{%url 'about'%}">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Services <i class="icofont-thin-down"></i></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                            <li><a class="dropdown-item" href="{%url 'lungCancer' %}">Lung Cancer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'diabetes' %}">Diabetes</a></li>
+                            <li><a class="dropdown-item" href="{% url 'heartAttack' %}">Heart Attack</a></li>
+                            <li><a class="dropdown-item" href="{% url 'kidneyDisease' %}">Kidney Disease</a></li>
+                            <li><a class="dropdown-item" href="{% url 'hypertension' %}">Hypertension</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h3 class="disease-title">Lung Cancer</h3>
+    <div class="divider" style="margin: 0 auto;"></div>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="formbold-mb-5">
+                    <label for="yf" class="formbold-form-label">
+                        YELLOW_FINGERS
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="yf" id="yf" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="f" class="formbold-form-label">
+                        FATIGUE
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="f" id="f" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="al" class="formbold-form-label">
+                        ALLERGY
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="al" id="al" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="wh" class="formbold-form-label">
+                        WHEEZING
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="wh" id="wh" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="ac" class="formbold-form-label">
+                        ALCOHOL CONSUIMING
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="ac" id="ac" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="ch" class="formbold-form-label">
+                        COUCHING
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="ch" id="ch" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="sd" class="formbold-form-label">
+                        SWALLOWING DIFFICULTY
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="sd" id="sd" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div class="formbold-mb-5">
+                    <label for="cp" class="formbold-form-label">
+                        CHEST PAIN
+                        <a class="popup-btn icofont-question-circle"></a>
+                    </label>
+
+                    <input type="number" name="cp" id="cp" required placeholder="ENTER 1 or 0"
+                        class="formbold-form-input" />
+                </div>
+                <div>
+                    <button class="formbold-btn">Predict</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="pop-container">
+        <div class="popup-view">
+            <div class="popup-card">
+                <a><i class="icofont-close close-btn"></i></a>
+                <div class="info">
+                    <h3>Yellow Fingers</h3>
+                    <p>Yellow Fingers may be a sign of lung cancer, as it can indicate long-term smoking. The normal
+                        range for finger color
+                        is a pink or flesh color. However, yellowing of the fingers is considered abnormal when it is
+                        persistent or
+                        progressive.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Fatigue</h3>
+                <p>Fatigue, or feeling extremely tired or weak, may be a symptom of lung cancer, as cancer cells can
+                    cause
+                    the body to release chemicals that make you feel tired. The normal range for fatigue varies
+                    depending on
+                    individual factors such as age and physical activity level, but persistent and excessive fatigue may
+                    be
+                    a cause for concern. Fatigue is considered abnormal when it is persistent or significantly
+                    interferes
+                    with daily activities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Allergy</h3>
+                <p>Allergies can sometimes be a risk factor for lung cancer, as chronic inflammation can contribute to
+                    the
+                    development of cancer cells. The normal range for allergies varies, but if you are experiencing
+                    persistent symptoms such as sneezing, runny nose, or itchy eyes, you may want to discuss it with
+                    your
+                    healthcare provider. Allergies are considered abnormal when they significantly interfere with daily
+                    activities or lead to persistent respiratory symptoms.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Wheezing</h3>
+                <p>Wheezing, or a high-pitched whistling sound when breathing, may be a symptom of lung cancer, as it
+                    can
+                    indicate narrowed or blocked airways. The normal range for breathing sounds is a quiet, clear sound
+                    with
+                    no wheezing. However, wheezing is considered abnormal when it is persistent or accompanied by other
+                    respiratory symptoms such as shortness of breath or coughing.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Alcohol Consuming</h3>
+                <p>Alcohol consumption can be a risk factor for lung cancer, particularly when combined with smoking.
+                    The
+                    normal range for alcohol consumption varies depending on individual factors such as age and overall
+                    health, but excessive and persistent alcohol consumption can increase the risk of developing lung
+                    cancer. Alcohol consumption is considered abnormal when it is persistent or leads to other health
+                    problems such as liver disease.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Coughing</h3>
+                <p>Coughing can be a symptom of lung cancer, particularly if it is persistent or accompanied by other
+                    respiratory symptoms such as wheezing or shortness of breath. The normal range for coughing varies,
+                    but
+                    if you are experiencing persistent coughing that lasts for more than a few weeks, you may want to
+                    discuss it with your healthcare provider. Coughing is considered abnormal when it is persistent or
+                    significantly interferes with daily activities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Swallowing </h3>
+                <p>Swallowing difficulty, or dysphagia, can be a symptom of lung cancer, particularly if it is
+                    accompanied
+                    by other respiratory symptoms such as coughing or wheezing. The normal range for swallowing varies,
+                    but
+                    persistent difficulty swallowing or a sensation of food getting stuck may indicate a problem that
+                    requires medical attention. Swallowing difficulty is considered abnormal when it is persistent or
+                    significantly interferes with daily activities.</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-view">
+        <div class="popup-card">
+            <a><i class="icofont-close close-btn"></i></a>
+            <div class="info">
+                <h3>Chest Pain</h3>
+                <p>Chest pain can be a symptom of lung cancer, particularly if it is persistent or accompanied by other
+                    respiratory symptoms such as coughing or shortness of breath. The normal range for chest pain
+                    varies,
+                    but any persistent or severe chest pain should be evaluated by a healthcare provider. Chest pain is
+                    considered abnormal when it is persistent or significantly interferes with daily activities.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer section gray-bg">
+        <div class="footer-container">
+            <div class="row">
+                <div class="col-lg-4 mr-auto col-sm-6">
+                    <div class="widget mb-5 ml-3 mb-lg-0">
+                        <div class="logo mb-4">
+                            <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
+                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ad.</p>
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="icofont-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="widget mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Support</h4>
+                        <div class="divider mb-4"></div>
+
+                        <ul class="list-unstyled footer-menu lh-35">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Company Support </a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Company Licence</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <div class="widget widget-contact mb-5 mb-lg-0">
+                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
+                        <div class="divider mb-4"></div>
+
+                        <div class="footer-contact-block mb-4">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-email mr-3"></i>
+                                <span class="h6 mb-0">Support Available for 24/7</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">Support@email.com</a></h4>
+                        </div>
+
+                        <div class="footer-contact-block">
+                            <div class="icon d-flex align-items-center">
+                                <i class="icofont-support mr-3"></i>
+                                <span class="h6 mb-0">Mon to Fri : 08:00 - 18:00</span>
+                            </div>
+                            <h4 class="mt-2"><a href="#">123-456-789</a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        var popupViews = document.querySelectorAll('.popup-view');
+        var popupBtns = document.querySelectorAll('.popup-btn');
+        var closeBtns = document.querySelectorAll('.close-btn');
+
+        //javascript for quick view button
+        var popup = function (popupClick) {
+            popupViews[popupClick].classList.add('active');
+        }
+
+        popupBtns.forEach((popupBtn, i) => {
+            popupBtn.addEventListener("click", () => {
+                popup(i);
+            });
+        });
+
+        //javascript for close button
+        closeBtns.forEach((closeBtn) => {
+            closeBtn.addEventListener("click", () => {
+                popupViews.forEach((popupView) => {
+                    popupView.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
